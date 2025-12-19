@@ -76,7 +76,9 @@ AI-ML-cosmo/
 ├── Server/           # Express + Gemini
 │   ├── index.js
 │   └── package.json
+├── LICENSE
 └── README.md
+
 ```
 ---
 
