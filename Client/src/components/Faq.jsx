@@ -1,0 +1,23 @@
+import React from "react";
+import Carousel from "../Carousel";
+
+const Faq = () => {
+  return (
+    <section className="w-full h-full bg-neutral-950 flex justify-center items-center">
+      
+      <div style={{ height: "800px", position: "relative" }}>
+        <Carousel
+          baseWidth={400}
+          autoplay={true}
+          autoplayDelay={5000}
+          pauseOnHover={true}
+          loop={true}
+          height= {500}
+          round={false}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default Faq;
