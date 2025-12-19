@@ -1,14 +1,16 @@
 import React from "react";
 import Carousel from "../Carousel";
 import Team from "./Team";
+import Footer from "./Footer";
 
 const Faq = () => {
   return (
     <>
     <Team/>
-    <section className="w-full h-full bg-neutral-950 flex justify-center items-center">
+    <section className="w-full h-[500px] bg-neutral-950 flex justify-center items-center ">
       
-      <div style={{ height: "800px", position: "relative" }}>
+      <div className="pt-30" style={{ height: "800px", position: "relative" }}>
+        <h1 className="text-white text-5xl mb-10">FAQ</h1>
         <Carousel
           baseWidth={400}
           autoplay={true}
@@ -21,7 +23,7 @@ const Faq = () => {
       </div>
       
     </section>
-    <footer className="bg-white">f</footer>
+    <Footer/>
     </>
   );
 };
