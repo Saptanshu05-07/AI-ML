@@ -13,6 +13,8 @@ import BlobCursor from "./Cursor";
 import Service from "../src/components/Service"
 import UseCases from "../src/components/UseCase"
 import Faq from "../src/components/Faq"
+import Dashboard from "./Pages/Dashboard";
+
 const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,10 +28,11 @@ const App = () => {
 
   const isChatPage = location.pathname === "/chat";
   const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
+  const isDashboardPage = location.pathname === "/dashboard";
 
   return (
     <>
-      {!isChatPage && !isAuthPage && (
+      {!isChatPage && !isAuthPage && !isDashboardPage && (
         <><div className="w-screen h-screen relative flex justify-center items-center">
           <Nav />
           <div
@@ -65,6 +68,7 @@ const App = () => {
           </div><UseCases /><Faq /></>
       )}
       <Routes>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/chat" element={<Chat />}></Route>
