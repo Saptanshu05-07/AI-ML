@@ -28,7 +28,7 @@ const Login = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/auth/login', formData);
+      const response = await axios.post('https://ai-ml-backend.onrender.com/auth/login', formData);
       
       if (response.data._status) {
         // Store token in localStorage
