@@ -160,10 +160,10 @@ const Chat = () => {
 
   return (
     <div className="h-screen w-screen bg-neutral-900 flex justify-center items-center relative">
-      <div className="h-[90vh] w-[95vw] max-w-5xl rounded-2xl text-white flex flex-col relative bg-neutral-800 border border-neutral-700">
+      <div className="h-[90vh] w-[95vw] max-w-5xl rounded-2xl text-white flex flex-col relative bg-neutral-900 ">
         
         {/* Header */}
-        <div className="h-16 rounded-t-2xl flex justify-between items-center px-6 border-b border-neutral-700 bg-neutral-750">
+        <div className="h-16 rounded-t-2xl flex justify-between items-center px-6 border-b border-neutral-900 bg-neutral-750">
           <div>
             <h2 className="text-2xl font-bold">Chat Session</h2>
             {user && <p className="text-sm text-gray-400">Welcome, {user.name}</p>}
