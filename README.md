@@ -53,8 +53,7 @@ Many individuals—especially students—struggle to express emotions due to sti
   - AI emotional scoring (0–100)
 
 ### 🔹 Database & Auth
-- Firebase Firestore (NoSQL)
-- Firebase Authentication (Google OAuth)
+- MongoDB
 
 ### 🔹 Privacy & Security
 - Summary-based memory (no raw emotional chats stored)
@@ -125,10 +124,13 @@ This app is a supportive companion, not a therapist or medical professional. It 
 ---
 ## 📸 Demo & Screenshots
 - ##### 🖼️ Application Screenshots
-![Login Screen](README/Application%20Screenshots.jpg)
+![front Screen](README/Application%20Screenshots.jpg)
+
+- #####  Login & Onboarding
+![Login Screen](README/login.png)
 
 - #####	 AI Chat Interface
-![Login Screen](README/AI%20Chat%20Interface.jpg)
+![Chat Screeen](README/AI%20Chat%20Interface.jpg)
 
 ---
 ## 👥 Contributors (Cosmic Hackers Team)
