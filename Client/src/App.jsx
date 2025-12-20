@@ -6,7 +6,6 @@ import Button from "./components/Button";
 import Chat from "./Pages/Chat";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import { MessageCircle } from "lucide-react";
 import Hero2 from "./components/Hero2";
 import { motion } from "motion/react";
 import LightRays from "./Light";

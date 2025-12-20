@@ -69,7 +69,7 @@ Many individuals—especially students—struggle to express emotions due to sti
 AI-ML-cosmo/
 ├── Client/           # React app
 │   ├── src/
-│   │   ├── components/ (Nav, Hero, Button, etc.)
+│   │   ├── components/ (Nav, Hero, Button, Faq)
 │   │   ├── Pages/Chat.jsx
 │   │   ├── Light.jsx, Cursor.jsx, App.jsx
 │   └── package.json
