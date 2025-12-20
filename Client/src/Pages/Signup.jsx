@@ -84,7 +84,7 @@ const Signup = () => {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:8000/auth/signup', {
+      const response = await axios.post('https://ai-ml-backend.onrender.com/auth/signup', {
         name: formData.name,
         email: formData.email,
         password: formData.password,

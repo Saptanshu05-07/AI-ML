@@ -38,7 +38,7 @@ const Chat = () => {
       setError("");
 
       const response = await axios.post(
-        'http://localhost:8000/sessions/start',
+        'https://ai-ml-backend.onrender.com/sessions/start',
         {},
         {
           headers: {
