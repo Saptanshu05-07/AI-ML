@@ -17,10 +17,20 @@ import Faq from "./components/Faq";
 
 const App = () => {
   const location = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token);
+  }, []);
+
   const isChatPage = location.pathname === "/chat";
+  const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
+
   return (
     <>
-      {!isChatPage && (
+      {!isChatPage && !isAuthPage &&(
         <>
           <div className="w-screen h-screen relative flex justify-center items-center">
             <Nav />
