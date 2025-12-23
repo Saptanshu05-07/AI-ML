@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { LogIn, AlertCircle } from 'lucide-react';
+import API_URL from '../config/api';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Login = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/auth/login', formData);
+      const response = await axios.post(`${API_URL}/auth/login`, formData);
       
       if (response.data._status) {
         // Store token in localStorage
