@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { House, Send, LogOut, AlertCircle, CheckCircle, Loader } from 'lucide-react';
+import API_URL from '../config/api';
 
 const Chat = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Chat = () => {
       setError("");
 
       const response = await axios.post(
-        'http://localhost:8000/sessions/start',
+        `${API_URL}/sessions/start`,
         {},
         {
           headers: {
@@ -58,7 +59,13 @@ const Chat = () => {
       }
     } catch (err) {
       console.error('Session start error:', err);
-      setError('Failed to start session. Please try again.');
+      if (err.response?.data?.expired) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+      } else {
+        setError('Failed to start session. Please try again.');
+      }
     } finally {
       setSessionLoading(false);
     }
@@ -87,7 +94,7 @@ const Chat = () => {
 
       // Send to backend
       const response = await axios.post(
-        `http://localhost:8000/sessions/${sessionId}/message`,
+        `${API_URL}/sessions/${sessionId}/message`,
         { question: ques },
         {
           headers: {
@@ -106,9 +113,15 @@ const Chat = () => {
       }
     } catch (err) {
       console.error('Message error:', err);
-      setError('Failed to send message. Please try again.');
-      // Remove the user message if there was an error
-      setMessages(prev => prev.slice(0, -1));
+      if (err.response?.data?.expired) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+      } else {
+        setError('Failed to send message. Please try again.');
+        // Remove the user message if there was an error
+        setMessages(prev => prev.slice(0, -1));
+      }
     } finally {
       setLoading(false);
     }
@@ -123,7 +136,7 @@ const Chat = () => {
       setError("");
 
       const response = await axios.post(
-        `http://localhost:8000/sessions/${sessionId}/end`,
+        `${API_URL}/sessions/${sessionId}/end`,
         {},
         {
           headers: {
@@ -145,7 +158,13 @@ const Chat = () => {
       }
     } catch (err) {
       console.error('Session end error:', err);
-      setError('Failed to end session. Please try again.');
+      if (err.response?.data?.expired) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+      } else {
+        setError('Failed to end session. Please try again.');
+      }
     } finally {
       setSessionLoading(false);
     }

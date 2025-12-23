@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { UserPlus, AlertCircle, CheckCircle } from 'lucide-react';
+import API_URL from '../config/api';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const Signup = () => {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:8000/auth/signup', {
+      const response = await axios.post(`${API_URL}/auth/signup`, {
         name: formData.name,
         email: formData.email,
         password: formData.password,
